@@ -3,6 +3,7 @@ package com_SkillRary_genericLib;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -29,9 +30,13 @@ public class WebDriverUtilities {
 	 * @param ele
 	 * @param text
 	 */
-	public void DropDown(WebElement ele, String text) {
+	public void dropDown(WebElement ele, String text) {
 		Select s=new Select(ele);
 		s.selectByVisibleText(text);
+		//s.selectByIndex(indexNum);
+		List<WebElement> options = s.getOptions();
+		int count = options.size();
+		System.out.println("Total options: "+count);
 	}
 	
 	/**
@@ -52,7 +57,7 @@ public class WebDriverUtilities {
 	 */
 	public void dragAndDrop(WebDriver driver, WebElement source, WebElement target) {
 		Actions a=new Actions(driver);
-		a.dragAndDrop(source, target).perform();
+		a.dragAndDrop(source, target).build().perform();
 	}
 
 	/**
@@ -82,7 +87,7 @@ public class WebDriverUtilities {
 	}
 
 	/**
-	 * Used to scroll to required element 
+	 * Used to scroll to required element using coordinates
 	 * @param driver
 	 * @param x
 	 * @param y
@@ -90,6 +95,17 @@ public class WebDriverUtilities {
 	public void scrollBar(WebDriver driver, int x, int y) {
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy("+x+","+y+")");	
+		
+	}
+	
+	/**
+	 * Used to scroll till element using scrollIntoView
+	 * @param driver
+	 * @param ele
+	 */
+	public void scrollTillElement(WebDriver driver, WebElement ele) {
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", ele);
 	}
 
 	/**

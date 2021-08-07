@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com_EduDomain_Skillrary_Test.ScenarioTest2">
+      <class name="com_EduDomain_Skillrary_Test.ScenarioTest3">
         <methods>
           <include name="closeApp"/>
           <include name="configAS"/>
+          <include name="tc3"/>
           <include name="configBS"/>
           <include name="openApp"/>
-          <include name="tc2"/>
         </methods>
-      </class> <!-- com_EduDomain_Skillrary_Test.ScenarioTest2 -->
+      </class> <!-- com_EduDomain_Skillrary_Test.ScenarioTest3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

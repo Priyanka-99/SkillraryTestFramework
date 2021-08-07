@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class SkillraryDemoLoginPage {
 	public WebDriver driver;
@@ -16,6 +17,13 @@ public class SkillraryDemoLoginPage {
 	
 	@FindBy(xpath="//a[text()='Contact Us']")
 	private WebElement contactUsEle;
+	
+	@FindBy(className="chosen-select")
+	private WebElement testingDrpdwn;
+	
+	@FindBy(xpath="//a[text()='LOGIN']")
+	private WebElement loginHeaderBtn;
+	
 	
 	public SkillraryDemoLoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -31,6 +39,11 @@ public class SkillraryDemoLoginPage {
 		contactUsEle.click();
 		return new ContactUsPage(driver);
 	}
+	
+	public UserLoginPage login() {
+		loginHeaderBtn.click();
+		return new UserLoginPage(driver);
+	}
 
 	//getters
 	public WebElement getCourseBtn() {
@@ -44,7 +57,17 @@ public class SkillraryDemoLoginPage {
 	public WebElement getContactUsEle() {
 		return contactUsEle;
 	}
+
+	public WebElement getTestingDrpdwn() {
+		return testingDrpdwn;
+	}
+
+	public WebElement getLoginHeaderBtn() {
+		return loginHeaderBtn;
+	}
+
+
 	
 	
-	
+		
 }
