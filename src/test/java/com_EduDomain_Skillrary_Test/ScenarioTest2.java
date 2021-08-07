@@ -29,10 +29,11 @@ public class ScenarioTest2 extends BaseClass{
 		cup.contactUs(fileUtilities.getPropertyData("name"), fileUtilities.getPropertyData("email"), fileUtilities.getPropertyData("subject"), fileUtilities.getPropertyData("message"));
 		CoursePage cp = cup.searchCourse(fileUtilities.getPropertyData("courseName"));
 		TakeThisCoursePage ttc = cp.courseCat();
-		driverUtilities.switchFrame(driver, ttc.getFrameEle());
-		ttc.playVideo();
-		driverUtilities.switchBackFromFrame(driver);
+		//driverUtilities.switchFrame(driver, ttc.getFrameEle());
+		//ttc.playVideo();
+		//driverUtilities.switchBackFromFrame(driver);
 		ttc.tkthisCourse();
+		driverUtilities.verify(driver.getCurrentUrl(), fileUtilities.getPropertyData("takeThisCourseUrl"));
 		
 	}
 

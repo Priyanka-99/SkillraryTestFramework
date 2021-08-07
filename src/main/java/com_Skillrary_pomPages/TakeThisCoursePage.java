@@ -15,7 +15,7 @@ public class TakeThisCoursePage {
 	@FindBy(xpath="//div[@class='pause-icon']")
 	private WebElement pauseBtn;
 
-	@FindBy(xpath="//div[@class='btn btn-primary datapopup']")
+	@FindBy(xpath="//a[contains(text(),'TAKE THIS COURSE')]")
 	private WebElement takeThisCourseBtn;
 
 	@FindBy(xpath="//div[@class='youtube_video']")

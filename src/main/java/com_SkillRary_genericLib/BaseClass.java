@@ -90,7 +90,7 @@ public class BaseClass {
 		}else if(result==ITestResult.SKIP){
 			test.log(Status.SKIP, r.getName()+" Test case skipped");
 		}
-		driver.quit();
+		//driver.quit();
 	}
 
 	/**
