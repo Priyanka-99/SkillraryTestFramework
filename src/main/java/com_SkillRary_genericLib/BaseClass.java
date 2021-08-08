@@ -43,8 +43,8 @@ public class BaseClass {
 		 * Connection to database
 		 * Report
 		 */
-		System.out.println("********** Connected to Database **********");
-		con=FileUtilities.getDb();
+		//System.out.println("********** Connected to Database **********");
+		//con=FileUtilities.getDb();
 
 		htmlReport=new ExtentHtmlReporter(AutoConstant.reportsPath);
 		htmlReport.config().setDocumentTitle("SkillRary Report");
@@ -102,8 +102,8 @@ public class BaseClass {
 	public void configAS() throws SQLException {
 		htmlReport.flush();
 		reports.flush();
-		fileUtilities.closeDb();
-		System.out.println("********** Database closed **********");
+		//fileUtilities.closeDb();
+		//System.out.println("********** Database closed **********");
 	}
 
 }

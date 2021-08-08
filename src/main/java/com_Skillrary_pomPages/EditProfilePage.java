@@ -12,14 +12,16 @@ public class EditProfilePage {
 	@FindBy(xpath="//a[contains(text(),' Edit')]")
 	private WebElement editBtn;
 	
+	public EditProfilePage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		this.driver=driver;
+	}
+	
 	public UpdateProfilePage editProfile() {
 		editBtn.click();
 		return new UpdateProfilePage(driver);
 	}
-	
-	public EditProfilePage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-	}
+
 
 	public WebElement getEditBtn() {
 		return editBtn;
